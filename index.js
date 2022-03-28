@@ -4,6 +4,8 @@ const ytdl = require('ytdl-core')
 
 app.set('view engine', 'ejs');
 
+const port = process.env.PORT || 5000
+
 app.get('/', (req, res)=>{
     return res.render("index")
 })
@@ -20,6 +22,6 @@ app.get('/download', async (req, res)=>{
     });
 })
 
-app.listen('5000', () => {
+app.listen(port, () => {
     console.log('Server is running on Port:5000');
 })
